@@ -96,7 +96,7 @@ if __name__ == "__main__":
     '''
     
     # data preprocess
-    #X_raw = DataPreprocess.Adaptive_Threshold(X_raw)
+    #X_raw = DataPreprocess.blur_and_Adaptive_Threshold(X_raw)
     
     # model training
     #ModelTraining.do_stuff(image_width, image_height, channels, file_path)

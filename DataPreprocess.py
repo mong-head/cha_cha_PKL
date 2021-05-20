@@ -6,11 +6,18 @@ Adaptive_Threshold part : At the acquisition part, I saved the all data to have 
 '''
 
 class Data_Preprocessing():
-  def Adaptive_Threshold(X,maxval=255,thresh=0,k=5,C=5):
+  def Blur_and_Adaptive_Threshold(X,maxval=255,thresh=0,k=5,C=5):
     X_th = np.ndarray(shape=(len(X), image_height, image_width), dtype=np.uint8)
     i=0
     for img in tqdm(X):
+      # img : 읽을 당시, 흑백으로 읽음 
       img = img.astype('uint8')
+      
+      # blur: noise 줄임
+      kernel = np.ones((7,7),np.float32)/25
+      img = cv2.filter2D(img,-1,kernel)
+      
+      # adaptiveThreshold : 외곽선
       th = cv2.adaptiveThreshold(img, maxval, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, k, C)
       X_th[i] = th
       i += 1

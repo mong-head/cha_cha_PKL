@@ -1,2 +1,3 @@
 test_data/CNR-EXT_FULL_IMAGE_1000x750-20210520T150725Z-001.zip filter=lfs diff=lfs merge=lfs -text
 *-001.zip filter=lfs diff=lfs merge=lfs -text
+CNR-EXT_FULL_IMAGE_1000x750-20210520T150725Z-001.zip filter=lfs diff=lfs merge=lfs -text
